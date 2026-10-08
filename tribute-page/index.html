@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A tribute page dedicated to Kabza De Small, the South African Amapiano producer and DJ.">
+    <title>Kabza De Small | Tribute Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #111111;
+            color: #f4eee5;
+            line-height: 1.7;
+        }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background:
+                linear-gradient(
+                    rgba(17, 17, 17, 0.72),
+                    rgba(17, 17, 17, 0.9)
+                ),
+                url("kabza.jpg") center/cover no-repeat;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 25px 20px;
+            background-color: rgba(17, 17, 17, 0.85);
+        }
+
+        nav a {
+            color: #f4eee5;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #d4a45d;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-content p {
+            color: #d4a45d;
+            font-size: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(3rem, 8vw, 7rem);
+            color: #f4eee5;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h2 {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: normal;
+            color: #d8c8b4;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 25px;
+        }
+
+        section {
+            margin-bottom: 90px;
+        }
+
+        .section-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 2.5rem;
+            color: #d4a45d;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            color: #d8d0c7;
+            font-size: 1.1rem;
+        }
+
+        .biography {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .bio-card {
+            padding: 30px;
+            background-color: #1c1c1c;
+            border-left: 4px solid #d4a45d;
+            border-radius: 8px;
+        }
+
+        .bio-card p {
+            color: #d8d0c7;
+        }
+
+        .quote {
+            padding: 45px 30px;
+            background-color: #241d27;
+            border-top: 2px solid #d4a45d;
+            border-bottom: 2px solid #d4a45d;
+            text-align: center;
+        }
+
+        .quote p {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            color: #f4eee5;
+        }
+
+        .quote span {
+            display: block;
+            margin-top: 20px;
+            color: #d4a45d;
+            font-size: 0.95rem;
+        }
+
+        .timeline {
+            max-width: 850px;
+            margin: 0 auto;
+            border-left: 3px solid #d4a45d;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background-color: #d4a45d;
+            border-radius: 50%;
+            left: -39px;
+            top: 8px;
+        }
+
+        .timeline-item h3 {
+            color: #d4a45d;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p {
+            color: #d8d0c7;
+        }
+
+        .music-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .music-card {
+            background-color: #1c1c1c;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .music-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .music-card h3 {
+            color: #d4a45d;
+            margin-bottom: 10px;
+        }
+
+        .music-card p {
+            color: #d8d0c7;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr;
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 8px;
+            filter: saturate(0.8) contrast(1.05);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .gallery-image:hover {
+            transform: translateY(-6px);
+            filter: saturate(1) contrast(1.05);
+        }
+
+        .image-gallery figure:first-child .gallery-image {
+            height: 340px;
+        }
+
+        .image-gallery figcaption {
+            margin-top: 10px;
+            color: #aaa29a;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .tribute-ending {
+            text-align: center;
+            padding: 50px 25px;
+            background-color: #241d27;
+            border-radius: 10px;
+        }
+
+        .tribute-ending h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 2.3rem;
+            color: #d4a45d;
+            margin-bottom: 15px;
+        }
+
+        .tribute-ending p {
+            color: #d8d0c7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #0b0b0b;
+            color: #aaa29a;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .biography {
+                grid-template-columns: 1fr;
+            }
+
+            .music-list {
+                grid-template-columns: 1fr;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-image,
+            .image-gallery figure:first-child .gallery-image {
+                height: 260px;
+            }
+
+            .quote p {
+                font-size: 1.4rem;
+            }
+
+            main {
+                padding: 60px 20px;
+            }
+
+            section {
+                margin-bottom: 65px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            header {
+                padding-top: 100px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .bio-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="home">
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#biography">Biography</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#music">Music</a>
+        </nav>
+
+        <div class="hero-content">
+            <p>Tribute to a South African Music Icon</p>
+            <h1>Kabza De Small</h1>
+            <h2>The Sound Behind the Amapiano Movement</h2>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="biography">
+            <h2 class="section-title">About Kabza De Small</h2>
+
+            <p class="intro">
+                Kabza De Small, whose real name is Kabelo Petrus Motha, is a
+                South African DJ, record producer and record label owner.
+                He is widely recognised as one of the major figures who helped
+                shape and popularise Amapiano music.
+            </p>
+
+            <div class="biography">
+                <div class="bio-card">
+                    <p>
+                        Kabza De Small was born on 27 November 1992 in
+                        Mpumalanga, South Africa. His musical journey developed
+                        through house music, piano melodies and electronic
+                        production.
+                    </p>
+                </div>
+
+                <div class="bio-card">
+                    <p>
+                        His breakthrough came with the song
+                        <strong>Umshove</strong> in 2018. The song helped him
+                        gain wider attention and introduced his sound to more
+                        listeners.
+                    </p>
+                </div>
+
+                <div class="bio-card">
+                    <p>
+                        Kabza De Small is also one half of the famous
+                        <strong>Scorpion Kings</strong> alongside DJ Maphorisa.
+                        Their collaboration has played an important role in
+                        the growth of Amapiano.
+                    </p>
+                </div>
+
+                <div class="bio-card">
+                    <p>
+                        Through his production style, collaborations and
+                        PianoHub record label, Kabza has helped bring South
+                        African dance music to audiences around the world.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="quote">
+                <p>
+                    “His music turns rhythm into a language that connects
+                    people, places and generations.”
+                </p>
+
+                <span>Original tribute statement</span>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">The Amapiano Atmosphere</h2>
+
+            <div class="image-gallery">
+                <figure>
+                    <img
+                        class="gallery-image"
+                        src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=85"
+                        alt="Singer performing under warm stage lights"
+                        loading="lazy"
+                    >
+                    <figcaption>Music made for the stage</figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        class="gallery-image"
+                        src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=85"
+                        alt="Crowd enjoying a live music event"
+                        loading="lazy"
+                    >
+                    <figcaption>A sound shared worldwide</figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        class="gallery-image"
+                        src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=900&q=85"
+                        alt="DJ working at a mixing desk"
+                        loading="lazy"
+                    >
+                    <figcaption>Crafted behind the decks</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2 class="section-title">Recent Achievements</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <h3>2023 — Isimo</h3>
+                    <p>
+                        Kabza De Small released the extended play
+                        <strong>Isimo</strong>, featuring the popular song
+                        <strong>Imithandazo</strong>.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>2024 — Red Bull Symphonic</h3>
+                    <p>
+                        His Red Bull Symphonic performance with Ofentse Pitse
+                        and a symphonic orchestra sold out rapidly and
+                        highlighted the versatility of his music.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>2025 — Bab’Motha</h3>
+                    <p>
+                        Kabza De Small released the studio album
+                        <strong>Bab’Motha</strong>, adding another important
+                        project to his growing discography.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>2025 — Kings Will Rise</h3>
+                    <p>
+                        Kabza De Small and DJ Maphorisa continued their
+                        Scorpion Kings journey with the album
+                        <strong>Kings Will Rise</strong>.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>2026 — New Music</h3>
+                    <p>
+                        Kabza De Small continued releasing and appearing on
+                        new music projects, including collaborations and
+                        material connected with his upcoming work.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="music">
+            <h2 class="section-title">Popular Projects</h2>
+
+            <div class="music-list">
+
+                <div class="music-card">
+                    <h3>Umshove</h3>
+                    <p>
+                        The breakthrough song that helped introduce Kabza De
+                        Small to a wider audience.
+                    </p>
+                </div>
+
+                <div class="music-card">
+                    <h3>Scorpion Kings</h3>
+                    <p>
+                        A major collaboration between Kabza De Small and
+                        DJ Maphorisa.
+                    </p>
+                </div>
+
+                <div class="music-card">
+                    <h3>Isimo</h3>
+                    <p>
+                        A project featuring the well-known song
+                        Imithandazo.
+                    </p>
+                </div>
+
+                <div class="music-card">
+                    <h3>Bab’Motha</h3>
+                    <p>
+                        A 2025 studio album that continued his Amapiano
+                        legacy.
+                    </p>
+                </div>
+
+                <div class="music-card">
+                    <h3>Kings Will Rise</h3>
+                    <p>
+                        A collaborative project with DJ Maphorisa.
+                    </p>
+                </div>
+
+                <div class="music-card">
+                    <h3>PianoHub</h3>
+                    <p>
+                        His record label and creative platform for Amapiano
+                        music.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="tribute-ending">
+                <h2>A Legacy That Keeps Growing</h2>
+
+                <p>
+                    Kabza De Small has helped transform Amapiano from a local
+                    sound into a global musical movement. His creativity,
+                    collaborations and dedication continue to inspire artists
+                    and fans across the world.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Created as a tribute to Kabza De Small.
+            This page is for educational purposes.
+        </p>
+    </footer>
+
+</body>
+</html>
