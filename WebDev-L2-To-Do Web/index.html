@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple, professional task management application.">
+    <title>TaskFlow | To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="app-container">
+        <header class="app-header">
+            <div class="brand">
+                <span class="brand-icon">✓</span>
+                <span>TaskFlow</span>
+            </div>
+            <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+            <h1>Make today <span>count.</span></h1>
+            <p class="subtitle">Organise your tasks. Focus on what matters.</p>
+        </header>
+
+        <section class="task-input-section">
+            <form id="task-form">
+                <label for="task-input">What needs to get done?</label>
+                <div class="input-row">
+                    <input
+                        type="text"
+                        id="task-input"
+                        placeholder="Enter your next task..."
+                        maxlength="200"
+                        autocomplete="off"
+                        required
+                    >
+                    <button type="submit" class="add-button">+ Add Task</button>
+                </div>
+                <p id="form-message" class="form-message" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="task-section" aria-labelledby="pending-heading">
+            <div class="section-heading">
+                <div class="heading-group">
+                    <span class="section-icon pending-icon">◷</span>
+                    <h2 id="pending-heading">Pending Tasks</h2>
+                </div>
+                <span id="pending-count" class="count-badge">0 pending</span>
+            </div>
+            <ul id="pending-list" class="task-list"></ul>
+            <p id="pending-empty" class="empty-state">
+                <span class="empty-icon">✦</span>
+                <strong>You're all caught up!</strong>
+                <span>Add a task above to get started.</span>
+            </p>
+        </section>
+
+        <section class="task-section completed-section"
+                 aria-labelledby="completed-heading">
+            <div class="section-heading">
+                <div class="heading-group">
+                    <span class="section-icon completed-icon">✓</span>
+                    <h2 id="completed-heading">Completed Tasks</h2>
+                </div>
+                <span id="completed-count" class="count-badge">0 completed</span>
+            </div>
+            <ul id="completed-list" class="task-list"></ul>
+            <p id="completed-empty" class="empty-state">
+                <span class="empty-icon">◎</span>
+                <strong>Nothing completed yet</strong>
+                <span>Finished tasks will appear here.</span>
+            </p>
+        </section>
+
+        <footer class="app-footer">
+            <p>Small steps. Big progress.</p>
+            <span>TaskFlow &copy; 2026</span>
+        </footer>
+    </main>
+</body>
+</html>
