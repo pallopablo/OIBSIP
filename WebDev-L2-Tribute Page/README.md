@@ -1,4 +1,4 @@
-# tribute-page
+# Tribute Page
 Kabza De Small Tribute Page
 Description
 
