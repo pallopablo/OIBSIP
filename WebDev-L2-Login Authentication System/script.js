@@ -4,6 +4,7 @@
 const USERS_KEY = "secureAccessUsers";
 const SESSION_KEY = "secureAccessSession";
 
+// Read saved accounts safely.
 function getUsers() {
     try {
         const savedUsers = localStorage.getItem(USERS_KEY);
@@ -15,6 +16,7 @@ function getUsers() {
     }
 }
 
+// Display form feedback.
 function showMessage(element, message, type = "error") {
     if (!element) return;
 
@@ -22,7 +24,7 @@ function showMessage(element, message, type = "error") {
     element.className = `message ${type}`;
 }
 
-
+// Generate a random salt for each account.
 function generateSalt() {
     const bytes = crypto.getRandomValues(new Uint8Array(16));
 
@@ -31,7 +33,7 @@ function generateSalt() {
     ).join("");
 }
 
-
+// Hash the password together with its salt.
 async function hashPassword(password, salt) {
     if (!crypto.subtle) {
         throw new Error(
@@ -47,21 +49,21 @@ async function hashPassword(password, salt) {
     ).join("");
 }
 
-
+// Check whether a username is already registered.
 function usernameExists(users, username) {
     return users.some(user =>
         user.username.toLowerCase() === username.toLowerCase()
     );
 }
 
-
+// Check whether an email is already registered.
 function emailExists(users, email) {
     return users.some(user =>
         user.email.toLowerCase() === email.toLowerCase()
     );
 }
 
-
+// ---------------- REGISTRATION ----------------
 
 const registerForm = document.getElementById("registerForm");
 
@@ -162,6 +164,7 @@ if (registerForm) {
     });
 }
 
+// ---------------- LOGIN ----------------
 
 const loginForm = document.getElementById("loginForm");
 
@@ -224,6 +227,8 @@ if (loginForm) {
     });
 }
 
+// ---------------- PROTECTED DASHBOARD ----------------
+
 if (window.location.pathname.endsWith("/dashboard.html") ||
     window.location.pathname === "dashboard.html") {
 
@@ -257,7 +262,7 @@ if (window.location.pathname.endsWith("/dashboard.html") ||
     }
 }
 
-
+// ---------------- LOGOUT ----------------
 
 const logoutButton = document.getElementById("logoutButton");
 
