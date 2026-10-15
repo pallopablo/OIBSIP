@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your SecureAccess account.">
+    <title>Create Account | SecureAccess</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="auth-layout">
+        <section class="auth-panel">
+            <a class="brand" href="register.html">
+                <span class="brand-icon">S</span> SecureAccess
+            </a>
+
+            <div class="auth-content">
+                <p class="eyebrow">GET STARTED</p>
+                <h1>Create your account</h1>
+                <p class="subtitle">Join us today. Enter your details below.</p>
+
+                <form id="registerForm" novalidate>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input id="username" name="username" type="text"
+                            placeholder="Choose a username"
+                            autocomplete="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input id="email" name="email" type="email"
+                            placeholder="you@example.com"
+                            autocomplete="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="password"
+                            placeholder="Create a strong password"
+                            autocomplete="new-password" required>
+                        <p class="field-hint">At least 8 characters and 1 number.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm password</label>
+                        <input id="confirmPassword" name="confirmPassword"
+                            type="password" placeholder="Enter password again"
+                            autocomplete="new-password" required>
+                    </div>
+
+                    <p id="registerMessage" class="message"
+                        role="alert" aria-live="polite"></p>
+
+                    <button type="submit" class="primary-button">
+                        Create account <span aria-hidden="true">→</span>
+                    </button>
+                </form>
+
+                <p class="auth-switch">
+                    Already have an account? <a href="login.html">Sign in</a>
+                </p>
+            </div>
+
+            <footer class="auth-footer">
+                OIBSIP Task 4 · Login Authentication System
+            </footer>
+        </section>
+
+        <aside class="welcome-panel">
+            <div class="welcome-decoration decoration-one"></div>
+            <div class="welcome-decoration decoration-two"></div>
+
+            <div class="welcome-content">
+                <span class="welcome-label">YOUR SPACE. YOUR ACCOUNT.</span>
+                <h2>A simpler way to manage your access.</h2>
+                <p>Create your account and explore a clean authentication experience.</p>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Simple account registration</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Password validation</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Personal dashboard access</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="welcome-caption">Built with HTML, CSS and JavaScript.</p>
+        </aside>
+    </main>
+</body>
+</html>
