@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign in to your SecureAccess account.">
+    <title>Sign In | SecureAccess</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="auth-layout">
+        <section class="auth-panel">
+            <a class="brand" href="login.html">
+                <span class="brand-icon">S</span> SecureAccess
+            </a>
+
+            <div class="auth-content">
+                <p class="eyebrow">WELCOME BACK</p>
+                <h1>Sign in to your account</h1>
+                <p class="subtitle">Enter your credentials to continue to your dashboard.</p>
+
+                <form id="loginForm" novalidate>
+                    <div class="form-group">
+                        <label for="loginIdentity">Username or email</label>
+                        <input id="loginIdentity" name="identity" type="text"
+                            placeholder="Enter username or email"
+                            autocomplete="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input id="loginPassword" name="password" type="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password" required>
+                    </div>
+
+                    <p id="loginMessage" class="message"
+                        role="alert" aria-live="polite"></p>
+
+                    <button type="submit" class="primary-button">
+                        Sign in <span aria-hidden="true">→</span>
+                    </button>
+                </form>
+
+                <p class="auth-switch">
+                    Don't have an account? <a href="register.html">Create one</a>
+                </p>
+            </div>
+
+            <footer class="auth-footer">
+                OIBSIP Task 4 · Login Authentication System
+            </footer>
+        </section>
+
+        <aside class="welcome-panel">
+            <div class="welcome-decoration decoration-one"></div>
+            <div class="welcome-decoration decoration-two"></div>
+
+            <div class="welcome-content">
+                <span class="welcome-label">YOUR SPACE. YOUR ACCOUNT.</span>
+                <h2>Everything starts with a secure sign-in.</h2>
+                <p>Access your personal dashboard through a simple, user-friendly interface.</p>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Account-based access</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Credential validation</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Protected dashboard</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="welcome-caption">Built with HTML, CSS and JavaScript.</p>
+        </aside>
+    </main>
+</body>
+</html>
